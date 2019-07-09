@@ -26,6 +26,15 @@ $(function() {
     mainClass: 'my-mfp-zoom-in'
   });
 
+  // $(".toggle").click(function () {
+  //   $(this).closest("body").toggleClass("active");
+  //   // $("#menu").slideToggle(); 
+  // });
+  $(".toggle").click(function() {
+    $(this).toggleClass("active");
+    $("#menu").slideToggle();
+  });
+
   // Mail php
   $("form").submit(function () { //Change
     var th = $(this);
