@@ -1,0 +1,64 @@
+.toggle 
+  display: none
+  position: absolute
+  align-items: center
+  justify-content: center
+  top: 25px
+  right: 15px
+  width: 30px
+  height: 30px
+  z-index: 999   
+  +r(md)
+    display: flex
+  span
+    position: absolute
+    width: 32px
+    height: 4px
+    background-color: #ffffff
+    &:before 
+      content: ''
+      position: absolute
+      width: 32px
+      height: 4px
+      top: -10px
+      background-color: #ffffff
+      // animation: menu-load-state-top .4s
+    &:after 
+      content: ''
+      position: absolute
+      width: 32px
+      height: 4px
+      top: 10px
+      left: 0
+      background-color: #ffffff
+      // animation: menu-load-state-bottom .4s
+
+.active span
+  background: none
+.active .toggle
+  transition: .3s
+  background: none
+.active .header-btn
+  display: block
+
+.active span:before 
+  top: 0
+  animation: toggle-before .4s forwards
+.active span:after 
+  top: 0
+  animation: toggle-after .4s forwards
+
+
+@keyframes toggle-before 
+  0% 
+    transform: rotate(0)
+  100% 
+    transform: rotate(45deg)
+
+@keyframes toggle-after 
+  0% 
+    transform: rotate(0)
+  100% 
+    transform: rotate(-45deg)
+    
+
